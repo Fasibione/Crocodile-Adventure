@@ -23,8 +23,55 @@ export interface Stats {
   speed: number; // tiles per second
 }
 
-// Mostri della Prateria (vertical slice) + Boss.
-export type EnemyKind = "slime" | "scarab" | "rabbit" | "boss_prateria";
+export type EnemyKind =
+  | "slime"
+  | "rabbit"
+  | "scarab"
+  | "giant_bee"
+  | "prairie_wolf"
+  | "boss_prateria"
+
+  | "goblin"
+  | "giant_spider"
+  | "boar"
+  | "living_mushroom"
+  | "dark_crow"
+  | "boss_foresta"
+
+  | "scorpion"
+  | "golden_scarab"
+  | "mummy"
+  | "desert_cobra"
+  | "vulture"
+  | "boss_deserto"
+
+  | "toxic_slime"
+  | "giant_frog"
+  | "swamp_serpent"
+  | "carnivorous_plant"
+  | "giant_mosquito"
+  | "boss_palude"
+
+  | "gray_wolf"
+  | "bear"
+  | "stone_golem"
+  | "rock_eagle"
+  | "troll"
+  | "boss_montagna"
+
+  | "arctic_wolf"
+  | "ice_golem"
+  | "yeti"
+  | "frost_bat"
+  | "frost_spirit"
+  | "boss_ghiacciaio"
+
+  | "salamander"
+  | "fire_demon"
+  | "magma_elemental"
+  | "lava_bat"
+  | "lava_golem"
+  | "boss_vulcano";
 // Materiali/oggetti gia' esistenti (loot di esplorazione, NON modificato) +
 // nuove risorse per il Crafting (Armaiolo/Orafo/Alchimista) e i loro
 // prodotti (pozioni). Estensione puramente additiva: i 5 kind originali
