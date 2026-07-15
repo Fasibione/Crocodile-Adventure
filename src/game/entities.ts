@@ -1,4 +1,5 @@
-import { BUILDINGS, CROC_BASE, ENEMIES, PLAYER, SPECIES_ROLE, VILLAGE_SPAWN, xpForLevel } from "./config";
+import { BUILDINGS, CROC_BASE, PLAYER, SPECIES_ROLE, VILLAGE_SPAWN, xpForLevel } from "./config";
+import { getEnemyDefinition } from "./enemyDefinitions";
 import type { Entity, EnemyKind, ItemKind, Species, Vec2 } from "./types";
 
 let nextId = 1;
@@ -58,7 +59,11 @@ export function createEnemy(
   spawnRadius: number,
   difficulty = 1,
 ): Entity {
-  const def = ENEMIES[kind];
+  const def = getEnemyDefinition(kind);
+
+if (!def) {
+  throw new Error(`Enemy "${kind}" non trovato.`);
+}
   const s = def.stats;
   const m = difficulty;
   return {
