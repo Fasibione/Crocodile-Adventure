@@ -3,7 +3,6 @@ import {
   BIOME_ORDER,
   BOSS_AREA,
   BUILDINGS,
-  ENEMIES,
   ITEMS,
   SPAWN_AREAS,
   TILE,
@@ -12,6 +11,7 @@ import {
   WORLD,
   biomeAt,
 } from "./config";
+import { getEnemyDefinition } from "./enemyDefinitions";
 import type { BuildingKind, Entity, EnemyKind, ItemKind } from "./types";
 import type { GameEngine } from "./engine";
 
@@ -199,7 +199,9 @@ function drawDebug(ctx: CanvasRenderingContext2D, engine: GameEngine, cam: Camer
   // Il Boss ha la propria Boss Area evidenziata in modo distinto (oro).
   for (const area of SPAWN_AREAS) {
     const isBoss = area === BOSS_AREA;
-    const def = ENEMIES[area.kind];
+    const def = getEnemyDefinition(area.kind);
+
+if (!def) return;
     const spawnColor = isBoss ? "#ffd65a" : "#7fe6a1";
     const leashColor = isBoss ? "#ff8a5a" : "#5c8ba8";
     drawWorldCircle(ctx, cam, area.pos, area.radius, spawnColor);
@@ -510,7 +512,9 @@ function drawEquipment(ctx: CanvasRenderingContext2D, e: Entity, sx: number, sy:
 }
 
 function drawEnemy(ctx: CanvasRenderingContext2D, e: Entity, sx: number, sy: number) {
-  const def = ENEMIES[e.kind as EnemyKind];
+  const def = getEnemyDefinition(victim.kind);
+
+if (!def) return;
   const isBoss = !!e.isBoss;
   drawShadow(ctx, sx, sy + 2, isBoss ? 18 : 11);
   const bob = e.attackAnim > 0 ? -2 : 0;
