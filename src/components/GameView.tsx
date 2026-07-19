@@ -17,6 +17,21 @@ import beeAttackUrl from "@/assets/bee_attack.png";
 import boarIdleUrl from "@/assets/boar_idle.png";
 import boarWalkUrl from "@/assets/boar_walk.png";
 import boarAttackUrl from "@/assets/boar_attack.png";
+import goblinIdleUrl from "@/assets/goblin_idle.png";
+import goblinWalkUrl from "@/assets/goblin_walk.png";
+import goblinAttackUrl from "@/assets/goblin_attack.png";
+import treantIdleUrl from "@/assets/treant_idle.png";
+import treantWalkUrl from "@/assets/treant_walk.png";
+import treantAttackUrl from "@/assets/treant_attack.png";
+import orsoIdleUrl from "@/assets/orso_idle.png";
+import orsoWalkUrl from "@/assets/orso_walk.png";
+import orsoAttackUrl from "@/assets/orso_attack.png";
+import spiderIdleUrl from "@/assets/spider_idle.png";
+import spiderWalkUrl from "@/assets/spider_walk.png";
+import spiderAttackUrl from "@/assets/spider_attack.png";
+import serpenteIdleUrl from "@/assets/serpente_idle.png";
+import serpenteWalkUrl from "@/assets/serpente_walk.png";
+import serpenteAttackUrl from "@/assets/serpente_attack.png";
 import townhallUrl from "@/assets/Municipio.png";
 import hospitalUrl from "@/assets/Ospedale.png";
 import smithyUrl from "@/assets/Fabbro.png";
@@ -188,6 +203,31 @@ export default function GameView() {
         idle: loadImg(boarIdleUrl),
         walk: loadImg(boarWalkUrl),
         attack: loadImg(boarAttackUrl),
+      },
+      goblin: {
+        idle: loadImg(goblinIdleUrl),
+        walk: loadImg(goblinWalkUrl),
+        attack: loadImg(goblinAttackUrl),
+      },
+      treant: {
+        idle: loadImg(treantIdleUrl),
+        walk: loadImg(treantWalkUrl),
+        attack: loadImg(treantAttackUrl),
+      },
+      orso: {
+        idle: loadImg(orsoIdleUrl),
+        walk: loadImg(orsoWalkUrl),
+        attack: loadImg(orsoAttackUrl),
+      },
+      spider: {
+        idle: loadImg(spiderIdleUrl),
+        walk: loadImg(spiderWalkUrl),
+        attack: loadImg(spiderAttackUrl),
+      },
+      serpente: {
+        idle: loadImg(serpenteIdleUrl),
+        walk: loadImg(serpenteWalkUrl),
+        attack: loadImg(serpenteAttackUrl),
       },
     };
     const startTime = performance.now();

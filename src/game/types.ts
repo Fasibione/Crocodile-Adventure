@@ -32,6 +32,10 @@ export type EnemyKind =
   | "wolf"
   | "spider"
   | "boss_foresta"
+  | "orso"
+  | "treant"
+  | "goblin"
+  | "serpente"
   | "ape_gigante"
   | "cinghiale"
   | "scorpion"
@@ -61,6 +65,7 @@ export type ItemKind =
   | "rareCrystal"
   | "honey" // Miele (drop dell'Ape Gigante)
   | "tusk" // Zanna (drop del Cinghiale)
+  | "venom" // Veleno (drop del Serpente)
   // --- Materiali da Crafting (acquistabili dal Mercante) ---
   | "wood" // Legno (Armaiolo)
   | "iron" // Ferro (Armaiolo)

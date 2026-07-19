@@ -193,6 +193,7 @@ export const ITEM_CATEGORY: Record<ItemKind, ItemCategory> = {
   rareCrystal: "material",
   honey: "material",
   tusk: "material",
+  venom: "material",
   wood: "material",
   iron: "material",
   steel: "material",
@@ -606,6 +607,38 @@ export const ENEMIES: Record<EnemyKind, EnemyDef> = {
     attackRange: 1.0, attackCooldown: 1.0, aggroRange: 6, leashDistance: 10,
     drops: [{ kind: "gold", chance: 0.7 }, { kind: "chitin", chance: 0.5 }],
   },
+  orso: {
+    name: "Orso",
+    color: "#7a5230",
+    stats: { hp: 55, attack: 13, defense: 5, speed: 2.0 },
+    xp: 26,
+    attackRange: 1.1, attackCooldown: 1.2, aggroRange: 6, leashDistance: 10,
+    drops: [{ kind: "gold", chance: 0.8 }, { kind: "pelt", chance: 0.6 }],
+  },
+  treant: {
+    name: "Treant",
+    color: "#5a7a3a",
+    stats: { hp: 60, attack: 10, defense: 7, speed: 1.3 },
+    xp: 28,
+    attackRange: 1.2, attackCooldown: 1.3, aggroRange: 5, leashDistance: 9,
+    drops: [{ kind: "gold", chance: 0.7 }, { kind: "wood", chance: 0.65 }],
+  },
+  goblin: {
+    name: "Goblin",
+    color: "#4a7a4a",
+    stats: { hp: 30, attack: 9, defense: 2, speed: 2.6 },
+    xp: 18,
+    attackRange: 1.0, attackCooldown: 0.9, aggroRange: 7, leashDistance: 11,
+    drops: [{ kind: "gold", chance: 0.85 }, { kind: "gem", chance: 0.35 }],
+  },
+  serpente: {
+    name: "Serpente Velenoso",
+    color: "#4a8a3a",
+    stats: { hp: 34, attack: 11, defense: 2, speed: 2.1 },
+    xp: 21,
+    attackRange: 0.9, attackCooldown: 1.0, aggroRange: 6, leashDistance: 10,
+    drops: [{ kind: "gold", chance: 0.7 }, { kind: "venom", chance: 0.5 }],
+  },
   boss_foresta: {
     name: "Re della Foresta",
     color: "#2f7a3a",
@@ -749,6 +782,7 @@ export const ITEMS: Record<ItemKind, { name: string; color: string }> = {
   rareCrystal: { name: "Cristallo Raro", color: "#c86bff" },
   honey: { name: "Miele", color: "#f0b43a" },
   tusk: { name: "Zanna", color: "#e8e0d0" },
+  venom: { name: "Veleno", color: "#8fd94a" },
   // Materiali da Crafting (acquistabili dal Mercante).
   wood: { name: "Legno", color: "#8a6a3a" },
   iron: { name: "Ferro", color: "#9aa0a6" },
@@ -1039,7 +1073,7 @@ export function randomPointInBiome(
 // vedi BIOME_BOSS_KIND). Stessa suddivisione già usata da SPAWN_AREAS.
 export const BIOME_ENEMY_KINDS: Record<BiomeId, EnemyKind[]> = {
   prateria: ["slime", "rabbit", "wolf", "ape_gigante", "cinghiale"],
-  foresta: ["wolf", "spider"],
+  foresta: ["orso", "treant", "spider", "goblin", "serpente"],
   deserto: ["scorpion", "cobra"],
   palude: ["frog", "swamp_slime"],
   montagne: ["troll", "harpy"],
