@@ -570,7 +570,7 @@ function drawEnemy(
 ) {
   const def = ENEMIES[e.kind as EnemyKind];
   const isBoss = !!e.isBoss;
-  drawShadow(ctx, sx, sy + 2, isBoss ? 18 : 11);
+  drawShadow(ctx, sx, sy + 2, isBoss ? 26 : 15);
   const hasSprite = !!(sprite && sprite.idle && sprite.idle.complete && sprite.idle.naturalWidth > 0);
 
   let labelY: number; // riferimento verticale per nome/barra HP, sopra la testa
@@ -592,7 +592,7 @@ function drawEnemy(
       frames = Math.max(1, Math.round(img.naturalWidth / CELL));
       frame = Math.floor(time * 3) % frames; // idle: bob lento tra i frame disponibili
     }
-    const size = isBoss ? 68 : 44; // i Boss sono visibilmente piu' grandi
+    const size = isBoss ? 100 : 58; // i Boss sono visibilmente piu' grandi
     const bob = e.attackAnim > 0 ? -2 : 0;
     const destX = sx - size / 2;
     const destY = sy + 4 - size + bob;
@@ -621,7 +621,7 @@ function drawEnemy(
     ctx.fillStyle = e.hitFlash > 0 ? "#fff" : def.color;
     ctx.strokeStyle = isBoss ? "#ffd65a" : "#0008";
     ctx.lineWidth = isBoss ? 2.5 : 1.5;
-    const r = isBoss ? 17 : 10;
+    const r = isBoss ? 24 : 14;
     ctx.beginPath();
     ctx.arc(sx, sy - r + bob, r, 0, Math.PI * 2);
     ctx.fill();
